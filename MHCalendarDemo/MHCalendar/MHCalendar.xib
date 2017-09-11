@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MHCalendar" customModule="MHCalendarDemo" customModuleProvider="target">
+            <connections>
+                <outlet property="collectionView" destination="8gz-oM-Xlq" id="qpA-86-iUi"/>
+                <outlet property="headerView" destination="JJ3-Vl-y6N" id="Ug1-5U-VvW"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" restorationIdentifier="MHCalendar" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="194"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JJ3-Vl-y6N" customClass="MHCalendarHeaderView" customModule="MHCalendarDemo" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                    <color key="backgroundColor" red="0.93272128807106602" green="0.93272128807106602" blue="0.93272128807106602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="70" id="fj7-jH-IXD"/>
+                    </constraints>
+                </view>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="8gz-oM-Xlq">
+                    <rect key="frame" x="0.0" y="70" width="375" height="124"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bKO-Dr-WL6">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="XdT-OZ-VfG"/>
+                        <outlet property="delegate" destination="-1" id="yLm-9e-xkc"/>
+                    </connections>
+                </collectionView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="8gz-oM-Xlq" secondAttribute="trailing" id="07k-GI-nPJ"/>
+                <constraint firstAttribute="trailing" secondItem="JJ3-Vl-y6N" secondAttribute="trailing" id="5vH-KY-szH"/>
+                <constraint firstItem="8gz-oM-Xlq" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Bto-HC-zOX"/>
+                <constraint firstAttribute="bottom" secondItem="8gz-oM-Xlq" secondAttribute="bottom" id="CLF-BB-Tv9"/>
+                <constraint firstItem="JJ3-Vl-y6N" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Fln-Ug-VL2"/>
+                <constraint firstItem="JJ3-Vl-y6N" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="mU4-aD-cZJ"/>
+                <constraint firstItem="8gz-oM-Xlq" firstAttribute="top" secondItem="JJ3-Vl-y6N" secondAttribute="bottom" id="urk-3K-z6I"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-35.5" y="93"/>
+        </view>
+    </objects>
+</document>
