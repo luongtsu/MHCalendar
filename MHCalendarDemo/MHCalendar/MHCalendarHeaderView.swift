@@ -39,7 +39,6 @@ class MHCalendarHeaderView: UINibView {
         observer?.moveToAnotherMonth(isNextMonth: true)
     }
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         

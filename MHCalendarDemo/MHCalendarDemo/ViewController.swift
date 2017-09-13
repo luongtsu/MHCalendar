@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         calendarView.mhCalendarObserver = self
-        calendarView.config()
+        calendarView.displayingDate = Date()
     }
 }
 

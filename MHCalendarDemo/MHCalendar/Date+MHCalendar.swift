@@ -106,6 +106,12 @@ extension Date {
         return dateFormatter.string(from: self)
     }
     
+    func monthYearInfo() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM YYYY"
+        return dateFormatter.string(from: self)
+    }
+    
     func isSunday() -> Bool
     {
         return (self.getWeekday() == 1)

@@ -27,8 +27,8 @@
                         <constraint firstAttribute="height" constant="70" id="fj7-jH-IXD"/>
                     </constraints>
                 </view>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="8gz-oM-Xlq">
-                    <rect key="frame" x="0.0" y="70" width="375" height="124"/>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="8gz-oM-Xlq">
+                    <rect key="frame" x="10" y="70" width="355" height="124"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bKO-Dr-WL6">
                         <size key="itemSize" width="50" height="50"/>
@@ -44,9 +44,9 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="8gz-oM-Xlq" secondAttribute="trailing" id="07k-GI-nPJ"/>
+                <constraint firstAttribute="trailing" secondItem="8gz-oM-Xlq" secondAttribute="trailing" constant="10" id="07k-GI-nPJ"/>
                 <constraint firstAttribute="trailing" secondItem="JJ3-Vl-y6N" secondAttribute="trailing" id="5vH-KY-szH"/>
-                <constraint firstItem="8gz-oM-Xlq" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Bto-HC-zOX"/>
+                <constraint firstItem="8gz-oM-Xlq" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="Bto-HC-zOX"/>
                 <constraint firstAttribute="bottom" secondItem="8gz-oM-Xlq" secondAttribute="bottom" id="CLF-BB-Tv9"/>
                 <constraint firstItem="JJ3-Vl-y6N" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Fln-Ug-VL2"/>
                 <constraint firstItem="JJ3-Vl-y6N" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="mU4-aD-cZJ"/>
