@@ -28,22 +28,26 @@ class MHCalendar: UINibView {
     }
     
     // Appearance
-    var dayDisabledTintColor: UIColor!
-    var weekdayTintColor: UIColor!
-    var weekendTintColor: UIColor!
-    var todayTintColor: UIColor!
-    var dateSelectionColor: UIColor!
-    var monthTitleColor: UIColor!
+    var dayDisabledTintColor: UIColor = UIColor.lightGray
+    var weekdayTintColor: UIColor = UIColor.darkGray
+    var weekendTintColor: UIColor = UIColor.red
+    var todayTintColor: UIColor = UIColor.brown
+    var dateSelectionColor: UIColor = UIColor.blue
+    
+    var monthTitleColor: UIColor = UIColor.brown
+    var monthBackgroundColor: UIColor = UIColor.clear
     
     // Other config
     var selectedDates = [Date]()
-    var startDate: Date! = Date(year: 2017, month: 1, day: 1)
-    var endDate: Date! = Date(year: 2057, month: 1, day: 1)
+    var startDate: Date = Date(year: 2017, month: 1, day: 1)
+    var endDate: Date = Date(year: 2057, month: 1, day: 1)
     var displayingDate: Date! = Date() {
         didSet {
             displayingYear = displayingDate.year()
             displayingMonth = displayingDate.month()
             firstDayOfThisMonth = Date(year: displayingYear, month: displayingMonth, day: 1)
+            
+            updateCalendarView()
         }
     }
     
@@ -58,47 +62,76 @@ class MHCalendar: UINibView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        MHCollectionViewCell.register(to: self.collectionView)
+        MHCollectionViewCell.register(to: collectionView)
+        MHCollectionViewCell.register(to: collectionView)
+        collectionView.backgroundColor = UIColor.clear
     }
     
-    private func didSetObserver() {
+    func didSetObserver() {
         headerView.observer = self
+        
+        /// set the gesture here
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(respondToSwipeGestureRight))
+        swipeRight.direction = UISwipeGestureRecognizerDirection.right
+        self.addGestureRecognizer(swipeRight)
+        
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(respondToSwipeGestureLeft))
+        swipeLeft.direction = UISwipeGestureRecognizerDirection.left
+        self.addGestureRecognizer(swipeLeft)
     }
     
-    func config(startDate: Date = Date(), endDate: Date = Date(), displayingDate: Date = Date(), multiSelection: Bool = true, selectedDates: [Date] = []) {
-        self.startDate = startDate
-        self.endDate = endDate
-        self.displayingDate = displayingDate
-        
-        self.multiSelectEnabled = multiSelection
-        self.selectedDates = selectedDates
-        
-        //Text color initializations
-        self.dayDisabledTintColor = UIColor.gray
-        self.weekdayTintColor = UIColor.blue
-        self.weekendTintColor = UIColor.red
-        self.dateSelectionColor = UIColor.brown
-        self.monthTitleColor = UIColor.rgb(211, 84, 0)
-        self.todayTintColor = UIColor.green
-        
-        MHCollectionViewCell.register(to: self.collectionView)
-        self.collectionView.backgroundColor = UIColor.clear
+    @objc private func respondToSwipeGestureRight() {
+        moveToAnotherMonth(isNextMonth: false)
+    }
+    
+    @objc private func respondToSwipeGestureLeft() {
+        moveToAnotherMonth(isNextMonth: true)
+    }
+    
+    private func updateCalendarView() {
+        collectionView.reloadData()
+        headerView.currentMonthLabel.text = displayingDate.monthYearInfo()
     }
 }
 
 extension MHCalendar: MHCalendarHeaderViewResponsible {
     
     func moveToAnotherMonth(isNextMonth: Bool) {
+        
+        if isNextMonth {
+            if displayingDate.year() == endDate.year() && displayingDate.month() == endDate.month() {
+                return // reach the limit
+            }
+            displayingDate = displayingDate.dateByAddingMonths(1)
+            headerView.leftButton.isHidden = false
+            
+            if displayingDate.year() == endDate.year() && displayingDate.month() == endDate.month() {
+                headerView.rightButton.isHidden = true
+            }
+        }
+        if !isNextMonth {
+            if displayingDate.year() == startDate.year() && displayingDate.month() == startDate.month() {
+                return // reach the limit
+            }
+            displayingDate = displayingDate.dateByAddingMonths(-1)
+            headerView.rightButton.isHidden = false
+            
+            if displayingDate.year() == startDate.year() && displayingDate.month() == startDate.month() {
+                headerView.leftButton.isHidden = true
+            }
+        }
         mhCalendarObserver?.didSelectAnotherMonth(isNextMonth: isNextMonth)
     }
 }
+
+// MARK: - UICollectionViewDelegateFlowLayout
 
 extension MHCalendar: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
     {
         let rect = UIScreen.main.bounds
-        let screenWidth = rect.size.width - 7
+        let screenWidth = rect.size.width - 27
         return CGSize(width: screenWidth/7, height: screenWidth/7)
     }
     
@@ -108,9 +141,15 @@ extension MHCalendar: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
 }
+
+// MARK: - UICollectionViewDataSource, UICollectionViewDelegate
 
 extension MHCalendar: UICollectionViewDataSource, UICollectionViewDelegate {
     
@@ -146,7 +185,7 @@ extension MHCalendar: UICollectionViewDataSource, UICollectionViewDelegate {
             
             cell.currentDate = currentDate
             cell.titleLabel.text = "\(currentDate.day())"
-            
+             print("\(currentDate)  \(currentDate.isSaturday())  \(currentDate.isSunday())")
             if selectedDates.filter({ $0.isDateSameDay(currentDate)}).count > 0 && (firstDayOfThisMonth.month() == currentDate.month()) {
                 cell.selectedForLabelColor(dateSelectionColor)
             } else {
@@ -166,11 +205,9 @@ extension MHCalendar: UICollectionViewDataSource, UICollectionViewDelegate {
                     cell.setTodayCellColor(todayTintColor)
                 }
                 
-                if startDate != nil {
-                    if Calendar.current.startOfDay(for: cell.currentDate as Date) < Calendar.current.startOfDay(for: startDate!) {
-                        cell.isCellSelectable = false
-                        cell.titleLabel.textColor = self.dayDisabledTintColor
-                    }
+                if Calendar.current.startOfDay(for: cell.currentDate as Date) < Calendar.current.startOfDay(for: startDate) {
+                    cell.isCellSelectable = false
+                    cell.titleLabel.textColor = self.dayDisabledTintColor
                 }
             }
         } else {
