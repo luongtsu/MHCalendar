@@ -28,16 +28,77 @@
                                     <constraint firstAttribute="height" constant="440" id="CCK-E9-Uuf"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select any date" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8rf-Wy-KJg">
+                                <rect key="frame" x="0.0" y="548" width="375" height="119"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="the-Z0-1tG" userLabel="TopSwitch">
+                                <rect key="frame" x="310" y="476" width="51" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="49" id="XvW-Y5-cpq"/>
+                                    <constraint firstAttribute="height" constant="31" id="nly-vE-B4h"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="topSwitchToggled:" destination="BYZ-38-t0r" eventType="valueChanged" id="xcd-hf-rBK"/>
+                                </connections>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rXP-Cl-11X" userLabel="BottomSwitch">
+                                <rect key="frame" x="310" y="517" width="51" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="49" id="RXr-vP-pV3"/>
+                                    <constraint firstAttribute="height" constant="31" id="k5Q-l5-hQt"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="bottomSwitchToggled:" destination="BYZ-38-t0r" eventType="valueChanged" id="Pw2-Cw-gQT"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enable selection" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Afx-y2-INc">
+                                <rect key="frame" x="10" y="479.5" width="290" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="kSi-rC-kKt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enable multiSelection" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EmK-Pd-LSY">
+                                <rect key="frame" x="10" y="520.5" width="290" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="eL3-sb-fMx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Tdr-Qh-Bpz" secondAttribute="trailing" id="1C6-qZ-ARd"/>
+                            <constraint firstItem="rXP-Cl-11X" firstAttribute="centerY" secondItem="EmK-Pd-LSY" secondAttribute="centerY" id="5lv-z1-mKG"/>
+                            <constraint firstItem="the-Z0-1tG" firstAttribute="centerY" secondItem="Afx-y2-INc" secondAttribute="centerY" id="9UY-tL-g5F"/>
+                            <constraint firstItem="rXP-Cl-11X" firstAttribute="top" secondItem="the-Z0-1tG" secondAttribute="bottom" constant="10" id="BPZ-o5-dap"/>
+                            <constraint firstItem="the-Z0-1tG" firstAttribute="leading" secondItem="Afx-y2-INc" secondAttribute="trailing" constant="10" id="GBu-ST-XDq"/>
+                            <constraint firstItem="Afx-y2-INc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="HVj-ed-UHE"/>
                             <constraint firstItem="Tdr-Qh-Bpz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="L59-z7-6RR"/>
+                            <constraint firstItem="8rf-Wy-KJg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="LgE-zK-sqn"/>
+                            <constraint firstItem="rXP-Cl-11X" firstAttribute="leading" secondItem="EmK-Pd-LSY" secondAttribute="trailing" constant="10" id="RD0-X7-cce"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="8rf-Wy-KJg" secondAttribute="bottom" id="V8H-eU-OUE"/>
                             <constraint firstItem="Tdr-Qh-Bpz" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="ZzV-c5-M9Q"/>
+                            <constraint firstItem="EmK-Pd-LSY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="m0S-yk-avc"/>
+                            <constraint firstAttribute="trailing" secondItem="the-Z0-1tG" secondAttribute="trailing" constant="16" id="m5m-XM-qzV"/>
+                            <constraint firstItem="8rf-Wy-KJg" firstAttribute="top" secondItem="rXP-Cl-11X" secondAttribute="bottom" id="rp2-pA-sjy"/>
+                            <constraint firstAttribute="trailing" secondItem="8rf-Wy-KJg" secondAttribute="trailing" id="t3m-IG-l8K"/>
+                            <constraint firstItem="the-Z0-1tG" firstAttribute="top" secondItem="Tdr-Qh-Bpz" secondAttribute="bottom" constant="16" id="whx-Up-tFJ"/>
+                            <constraint firstAttribute="trailing" secondItem="rXP-Cl-11X" secondAttribute="trailing" constant="16" id="xeY-al-mGX"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bottomSwitch" destination="rXP-Cl-11X" id="Bde-ge-SNR"/>
                         <outlet property="calendarView" destination="Tdr-Qh-Bpz" id="yea-iV-9lf"/>
+                        <outlet property="infoLabel" destination="8rf-Wy-KJg" id="sdo-FC-PWy"/>
+                        <outlet property="topSwitch" destination="the-Z0-1tG" id="OcK-P3-CqW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -6,7 +6,6 @@
 //  Copyright © 2017 Luong Minh Hiep. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 extension Date {
