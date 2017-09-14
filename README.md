@@ -54,18 +54,18 @@ Properties
 
 Name | Description
 ---- | ---------
-**`weekdayTintColor`**|`Weekday title and date color`
-**`weekendTintColor`**|`Weekend title and date color`
-**`todayTintColor`**|`Today bar button the today's date color`
-**`dateSelectionColor`**|`Selected date color`
-**`dayDisabledTintColor`**|`Disabled day tint color`
-**`multiSelectEnabled`**|`Boolean value indicating whether multiselection enabled or not`
-**`startDate`**|`Starting date of the range`
-**`endDate`**|`Ending date of the range`
-**`displayingDate`**|`current displaying date on the calendar view`
-**`hideDaysFromOtherMonth`**|`Hides the days of other months with empty spaces`
-**`monthTitleColor`**|`Month title color`
-**`monthBackgroundColor`**|`Background Color of the Month view`
+**weekdayTintColor**|Weekday title and date color
+**weekendTintColor**|Weekend title and date color
+**todayTintColor**|Today bar button the today's date color
+**dateSelectionColor**|Selected date color
+**dayDisabledTintColor**|Disabled day tint color
+**multiSelectEnabled**|Boolean value indicating whether multiselection enabled or not
+**startDate**|Starting date of the range
+**endDate**|Ending date of the range
+**displayingDate**|current displaying date on the calendar view
+**hideDaysFromOtherMonth**|Hides the days of other months with empty spaces
+**monthTitleColor**|Month title color
+**monthBackgroundColor**|Background Color of the Month view
 
 
 Delegation
