@@ -16,6 +16,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         calendarView.mhCalendarObserver = self
         calendarView.displayingDate = Date()
+        calendarView.multiSelectEnabled = false
     }
 }
 
