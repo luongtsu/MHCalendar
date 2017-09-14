@@ -34,8 +34,17 @@ class MHCalendar: UINibView {
     var todayTintColor: UIColor = UIColor.brown
     var dateSelectionColor: UIColor = UIColor.blue
     
-    var monthTitleColor: UIColor = UIColor.brown
-    var monthBackgroundColor: UIColor = UIColor.clear
+    var monthTitleColor: UIColor = UIColor.brown {
+        didSet {
+            headerView.updateMonthTitleColor(monthTitleColor)
+        }
+    }
+    
+    var monthBackgroundColor: UIColor = UIColor.clear {
+        didSet {
+            headerView.backgroundColor = monthBackgroundColor
+        }
+    }
     
     // Other config
     var selectedDates = [Date]()
@@ -53,12 +62,14 @@ class MHCalendar: UINibView {
     
     var hightlightsToday: Bool = true
     var hideDaysFromOtherMonth: Bool = false
+    var selectEnabled: Bool = true
     var multiSelectEnabled: Bool = true
     
     // Helper params
     fileprivate var displayingYear: Int = 2000
     fileprivate var displayingMonth: Int = 1
     fileprivate var firstDayOfThisMonth: Date! = Date()
+    fileprivate var lastSelectedIndex: IndexPath?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -67,7 +78,7 @@ class MHCalendar: UINibView {
         collectionView.backgroundColor = UIColor.clear
     }
     
-    func didSetObserver() {
+    private func didSetObserver() {
         headerView.observer = self
         
         /// set the gesture here
@@ -229,11 +240,21 @@ extension MHCalendar: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+        guard selectEnabled else {
+            return
+        }
+        
         let cell = collectionView.cellForItem(at: indexPath) as! MHCollectionViewCell
         if !multiSelectEnabled && cell.isCellSelectable! {
+            if let `lastSelectedIndex` = lastSelectedIndex {
+                let lastSelectedCell = collectionView.cellForItem(at: lastSelectedIndex) as! MHCollectionViewCell
+                updateUnselectedCell(cell: lastSelectedCell)
+                selectedDates.removeAll()
+            }
             mhCalendarObserver?.didSelectDate(date: cell.currentDate)
             cell.selectedForLabelColor(dateSelectionColor)
             selectedDates.append(cell.currentDate)
+            lastSelectedIndex = indexPath
             return
         }
         
@@ -251,16 +272,20 @@ extension MHCalendar: UICollectionViewDataSource, UICollectionViewDelegate {
                 selectedDates = selectedDates.filter(){
                     return  !($0.isDateSameDay(cell.currentDate))
                 }
-                if cell.currentDate.isSaturday() || cell.currentDate.isSunday() {
-                    cell.deSelectedForLabelColor(weekendTintColor)
-                }
-                else {
-                    cell.deSelectedForLabelColor(weekdayTintColor)
-                }
-                if cell.currentDate.isToday() && hightlightsToday{
-                    cell.setTodayCellColor(todayTintColor)
-                }
+                updateUnselectedCell(cell: cell)
             }
+        }
+    }
+    
+    private func updateUnselectedCell(cell: MHCollectionViewCell) {
+        if cell.currentDate.isSaturday() || cell.currentDate.isSunday() {
+            cell.deSelectedForLabelColor(weekendTintColor)
+        }
+        else {
+            cell.deSelectedForLabelColor(weekdayTintColor)
+        }
+        if cell.currentDate.isToday() && hightlightsToday{
+            cell.setTodayCellColor(todayTintColor)
         }
     }
 }

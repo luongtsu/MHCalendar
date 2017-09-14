@@ -12,6 +12,24 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var calendarView: MHCalendar!
 
+    @IBOutlet weak var infoLabel: UILabel!
+    @IBOutlet weak var bottomSwitch: UISwitch!
+    @IBOutlet weak var topSwitch: UISwitch!
+    
+    @IBAction func topSwitchToggled(_ sender: Any) {
+        calendarView.selectEnabled = !calendarView.selectEnabled
+        calendarView.selectedDates.removeAll()
+        calendarView.displayingDate = Date()
+        calendarView.collectionView.reloadData()
+    }
+    
+    @IBAction func bottomSwitchToggled(_ sender: Any) {
+        calendarView.multiSelectEnabled = !calendarView.multiSelectEnabled
+        calendarView.selectedDates.removeAll()
+        calendarView.displayingDate = Date()
+        calendarView.collectionView.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         calendarView.mhCalendarObserver = self
@@ -22,15 +40,15 @@ class ViewController: UIViewController {
 extension ViewController: MHCalendarResponsible {
     
     func didSelectDate(date: Date) {
-        print(date)
+        infoLabel.text = "Info: Selected date: \(date) \n\(date.monthYearInfo())"
     }
     
     func didSelectDates(dates: [Date]) {
-        print(dates)
+        infoLabel.text = "Info: Selected date: \(dates))"
     }
     
     func didSelectAnotherMonth(isNextMonth: Bool){
-        print(isNextMonth)
+        infoLabel.text = isNextMonth ? "Info: Select Next month" : "Info: Select Previous month"
     }
 }
 

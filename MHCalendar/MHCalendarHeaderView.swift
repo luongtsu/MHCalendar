@@ -64,6 +64,10 @@ class MHCalendarHeaderView: UINibView {
         }
     }
     
+    func updateMonthTitleColor(_ color: UIColor) {
+        currentMonthLabel.textColor = color
+    }
+    
     func updateWeekendLabelColor(_ color: UIColor)
     {
         if Calendar.current.firstWeekday == 2 {

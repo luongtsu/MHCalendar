@@ -7,26 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		962536361F683631008D7FF3 /* MHCalendarHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 962536351F683631008D7FF3 /* MHCalendarHeaderView.xib */; };
+		963483131F6AFCC9004298F2 /* Date+MHCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963483081F6AFCC9004298F2 /* Date+MHCalendar.swift */; };
+		963483141F6AFCC9004298F2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 963483091F6AFCC9004298F2 /* Images.xcassets */; };
+		963483151F6AFCC9004298F2 /* MHCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9634830A1F6AFCC9004298F2 /* MHCalendar.swift */; };
+		963483161F6AFCC9004298F2 /* MHCalendar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9634830B1F6AFCC9004298F2 /* MHCalendar.xib */; };
+		963483171F6AFCC9004298F2 /* MHCalendar0.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9634830C1F6AFCC9004298F2 /* MHCalendar0.swift */; };
+		963483181F6AFCC9004298F2 /* MHCalendarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9634830D1F6AFCC9004298F2 /* MHCalendarHeaderView.swift */; };
+		963483191F6AFCC9004298F2 /* MHCalendarHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9634830E1F6AFCC9004298F2 /* MHCalendarHeaderView.xib */; };
+		9634831A1F6AFCC9004298F2 /* MHCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9634830F1F6AFCC9004298F2 /* MHCollectionViewCell.swift */; };
+		9634831B1F6AFCC9004298F2 /* MHCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 963483101F6AFCC9004298F2 /* MHCollectionViewCell.xib */; };
+		9634831C1F6AFCC9004298F2 /* UIColor+MHCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963483111F6AFCC9004298F2 /* UIColor+MHCalendar.swift */; };
+		9634831D1F6AFCC9004298F2 /* UINibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963483121F6AFCC9004298F2 /* UINibView.swift */; };
 		96C568BE1F66E44E00CFF71D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C568BD1F66E44E00CFF71D /* AppDelegate.swift */; };
 		96C568C01F66E44E00CFF71D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C568BF1F66E44E00CFF71D /* ViewController.swift */; };
 		96C568C31F66E44E00CFF71D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96C568C11F66E44E00CFF71D /* Main.storyboard */; };
 		96C568C51F66E44E00CFF71D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96C568C41F66E44E00CFF71D /* Assets.xcassets */; };
 		96C568C81F66E44E00CFF71D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96C568C61F66E44E00CFF71D /* LaunchScreen.storyboard */; };
-		96C568F51F67036100CFF71D /* Date+MHCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C568ED1F67036100CFF71D /* Date+MHCalendar.swift */; };
-		96C568F61F67036100CFF71D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96C568EE1F67036100CFF71D /* Images.xcassets */; };
-		96C568F71F67036100CFF71D /* MHCalendar0.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C568EF1F67036100CFF71D /* MHCalendar0.swift */; };
-		96C568F81F67036100CFF71D /* MHCalendarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C568F01F67036100CFF71D /* MHCalendarHeaderView.swift */; };
-		96C568FA1F67036100CFF71D /* MHCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C568F21F67036100CFF71D /* MHCollectionViewCell.swift */; };
-		96C568FB1F67036100CFF71D /* MHCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96C568F31F67036100CFF71D /* MHCollectionViewCell.xib */; };
-		96C568FC1F67036100CFF71D /* UIColor+MHCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C568F41F67036100CFF71D /* UIColor+MHCalendar.swift */; };
-		96C568FE1F68031200CFF71D /* UINibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C568FD1F68031200CFF71D /* UINibView.swift */; };
-		96C569001F68034600CFF71D /* MHCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C568FF1F68034600CFF71D /* MHCalendar.swift */; };
-		96C569021F68035400CFF71D /* MHCalendar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96C569011F68035400CFF71D /* MHCalendar.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		962536351F683631008D7FF3 /* MHCalendarHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MHCalendarHeaderView.xib; sourceTree = "<group>"; };
+		963483081F6AFCC9004298F2 /* Date+MHCalendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+MHCalendar.swift"; sourceTree = "<group>"; };
+		963483091F6AFCC9004298F2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		9634830A1F6AFCC9004298F2 /* MHCalendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHCalendar.swift; sourceTree = "<group>"; };
+		9634830B1F6AFCC9004298F2 /* MHCalendar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MHCalendar.xib; sourceTree = "<group>"; };
+		9634830C1F6AFCC9004298F2 /* MHCalendar0.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHCalendar0.swift; sourceTree = "<group>"; };
+		9634830D1F6AFCC9004298F2 /* MHCalendarHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHCalendarHeaderView.swift; sourceTree = "<group>"; };
+		9634830E1F6AFCC9004298F2 /* MHCalendarHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MHCalendarHeaderView.xib; sourceTree = "<group>"; };
+		9634830F1F6AFCC9004298F2 /* MHCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHCollectionViewCell.swift; sourceTree = "<group>"; };
+		963483101F6AFCC9004298F2 /* MHCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MHCollectionViewCell.xib; sourceTree = "<group>"; };
+		963483111F6AFCC9004298F2 /* UIColor+MHCalendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+MHCalendar.swift"; sourceTree = "<group>"; };
+		963483121F6AFCC9004298F2 /* UINibView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINibView.swift; sourceTree = "<group>"; };
 		96C568BA1F66E44E00CFF71D /* MHCalendarDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MHCalendarDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96C568BD1F66E44E00CFF71D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96C568BF1F66E44E00CFF71D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -34,16 +44,6 @@
 		96C568C41F66E44E00CFF71D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		96C568C71F66E44E00CFF71D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		96C568C91F66E44E00CFF71D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		96C568ED1F67036100CFF71D /* Date+MHCalendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+MHCalendar.swift"; sourceTree = "<group>"; };
-		96C568EE1F67036100CFF71D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		96C568EF1F67036100CFF71D /* MHCalendar0.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHCalendar0.swift; sourceTree = "<group>"; };
-		96C568F01F67036100CFF71D /* MHCalendarHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHCalendarHeaderView.swift; sourceTree = "<group>"; };
-		96C568F21F67036100CFF71D /* MHCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHCollectionViewCell.swift; sourceTree = "<group>"; };
-		96C568F31F67036100CFF71D /* MHCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MHCollectionViewCell.xib; sourceTree = "<group>"; };
-		96C568F41F67036100CFF71D /* UIColor+MHCalendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+MHCalendar.swift"; sourceTree = "<group>"; };
-		96C568FD1F68031200CFF71D /* UINibView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINibView.swift; sourceTree = "<group>"; };
-		96C568FF1F68034600CFF71D /* MHCalendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHCalendar.swift; sourceTree = "<group>"; };
-		96C569011F68035400CFF71D /* MHCalendar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MHCalendar.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,10 +57,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		963483071F6AFCC9004298F2 /* MHCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				963483081F6AFCC9004298F2 /* Date+MHCalendar.swift */,
+				963483091F6AFCC9004298F2 /* Images.xcassets */,
+				9634830A1F6AFCC9004298F2 /* MHCalendar.swift */,
+				9634830B1F6AFCC9004298F2 /* MHCalendar.xib */,
+				9634830C1F6AFCC9004298F2 /* MHCalendar0.swift */,
+				9634830D1F6AFCC9004298F2 /* MHCalendarHeaderView.swift */,
+				9634830E1F6AFCC9004298F2 /* MHCalendarHeaderView.xib */,
+				9634830F1F6AFCC9004298F2 /* MHCollectionViewCell.swift */,
+				963483101F6AFCC9004298F2 /* MHCollectionViewCell.xib */,
+				963483111F6AFCC9004298F2 /* UIColor+MHCalendar.swift */,
+				963483121F6AFCC9004298F2 /* UINibView.swift */,
+			);
+			name = MHCalendar;
+			path = ../MHCalendar;
+			sourceTree = "<group>";
+		};
 		96C568B11F66E44E00CFF71D = {
 			isa = PBXGroup;
 			children = (
-				96C568EC1F67036100CFF71D /* MHCalendar */,
+				963483071F6AFCC9004298F2 /* MHCalendar */,
 				96C568BC1F66E44E00CFF71D /* MHCalendarDemo */,
 				96C568BB1F66E44E00CFF71D /* Products */,
 			);
@@ -85,24 +104,6 @@
 				96C568C91F66E44E00CFF71D /* Info.plist */,
 			);
 			path = MHCalendarDemo;
-			sourceTree = "<group>";
-		};
-		96C568EC1F67036100CFF71D /* MHCalendar */ = {
-			isa = PBXGroup;
-			children = (
-				96C568ED1F67036100CFF71D /* Date+MHCalendar.swift */,
-				96C568EE1F67036100CFF71D /* Images.xcassets */,
-				96C568EF1F67036100CFF71D /* MHCalendar0.swift */,
-				96C568F01F67036100CFF71D /* MHCalendarHeaderView.swift */,
-				962536351F683631008D7FF3 /* MHCalendarHeaderView.xib */,
-				96C568F21F67036100CFF71D /* MHCollectionViewCell.swift */,
-				96C568F31F67036100CFF71D /* MHCollectionViewCell.xib */,
-				96C568F41F67036100CFF71D /* UIColor+MHCalendar.swift */,
-				96C568FD1F68031200CFF71D /* UINibView.swift */,
-				96C568FF1F68034600CFF71D /* MHCalendar.swift */,
-				96C569011F68035400CFF71D /* MHCalendar.xib */,
-			);
-			path = MHCalendar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,13 +166,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96C568FB1F67036100CFF71D /* MHCollectionViewCell.xib in Resources */,
 				96C568C81F66E44E00CFF71D /* LaunchScreen.storyboard in Resources */,
-				96C568F61F67036100CFF71D /* Images.xcassets in Resources */,
-				962536361F683631008D7FF3 /* MHCalendarHeaderView.xib in Resources */,
+				963483141F6AFCC9004298F2 /* Images.xcassets in Resources */,
 				96C568C51F66E44E00CFF71D /* Assets.xcassets in Resources */,
 				96C568C31F66E44E00CFF71D /* Main.storyboard in Resources */,
-				96C569021F68035400CFF71D /* MHCalendar.xib in Resources */,
+				9634831B1F6AFCC9004298F2 /* MHCollectionViewCell.xib in Resources */,
+				963483191F6AFCC9004298F2 /* MHCalendarHeaderView.xib in Resources */,
+				963483161F6AFCC9004298F2 /* MHCalendar.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,15 +183,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96C568F51F67036100CFF71D /* Date+MHCalendar.swift in Sources */,
+				963483181F6AFCC9004298F2 /* MHCalendarHeaderView.swift in Sources */,
+				963483131F6AFCC9004298F2 /* Date+MHCalendar.swift in Sources */,
+				9634831C1F6AFCC9004298F2 /* UIColor+MHCalendar.swift in Sources */,
 				96C568C01F66E44E00CFF71D /* ViewController.swift in Sources */,
-				96C569001F68034600CFF71D /* MHCalendar.swift in Sources */,
-				96C568FC1F67036100CFF71D /* UIColor+MHCalendar.swift in Sources */,
-				96C568F71F67036100CFF71D /* MHCalendar0.swift in Sources */,
-				96C568FE1F68031200CFF71D /* UINibView.swift in Sources */,
-				96C568FA1F67036100CFF71D /* MHCollectionViewCell.swift in Sources */,
-				96C568F81F67036100CFF71D /* MHCalendarHeaderView.swift in Sources */,
+				963483151F6AFCC9004298F2 /* MHCalendar.swift in Sources */,
+				9634831A1F6AFCC9004298F2 /* MHCollectionViewCell.swift in Sources */,
 				96C568BE1F66E44E00CFF71D /* AppDelegate.swift in Sources */,
+				9634831D1F6AFCC9004298F2 /* UINibView.swift in Sources */,
+				963483171F6AFCC9004298F2 /* MHCalendar0.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

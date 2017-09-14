@@ -6,7 +6,6 @@
 //  Copyright © 2017 Luong Minh Hiep. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 extension Date {
@@ -16,7 +15,8 @@ extension Date {
     }
     
     func firstDayOfMonth () -> Date {
-        let calendar = Calendar.current
+        var calendar = Calendar.current
+        calendar.timeZone = TimeZone(identifier: "UTC")!
         var dateComponent = (calendar as NSCalendar).components([.year, .month, .day ], from: self)
         dateComponent.day = 1
         return calendar.date(from: dateComponent)!
@@ -24,7 +24,8 @@ extension Date {
     
     init(year : Int, month : Int, day : Int) {
         
-        let calendar = Calendar.current
+        var calendar = Calendar.current
+        calendar.timeZone = TimeZone(identifier: "UTC")!
         var dateComponent = DateComponents()
         dateComponent.year = year
         dateComponent.month = month
@@ -33,69 +34,80 @@ extension Date {
     }
     
     func dateByAddingMonths(_ months : Int ) -> Date {
-        let calendar = Calendar.current
+        var calendar = Calendar.current
+        calendar.timeZone = TimeZone(identifier: "UTC")!
         var dateComponent = DateComponents()
         dateComponent.month = months
         return (calendar as NSCalendar).date(byAdding: dateComponent, to: self, options: NSCalendar.Options.matchNextTime)!
     }
     
     func dateByAddingDays(_ days : Int ) -> Date {
-        let calendar = Calendar.current
+        var calendar = Calendar.current
+        calendar.timeZone = TimeZone(identifier: "UTC")!
         var dateComponent = DateComponents()
         dateComponent.day = days
         return (calendar as NSCalendar).date(byAdding: dateComponent, to: self, options: NSCalendar.Options.matchNextTime)!
     }
     
     func hour() -> Int {
-        let calendar = Calendar.current
+        var calendar = Calendar.current
+        calendar.timeZone = TimeZone(identifier: "UTC")!
         let dateComponent = (calendar as NSCalendar).components(.hour, from: self)
         return dateComponent.hour!
     }
     
     func second() -> Int {
-        let calendar = Calendar.current
+        var calendar = Calendar.current
+        calendar.timeZone = TimeZone(identifier: "UTC")!
         let dateComponent = (calendar as NSCalendar).components(.second, from: self)
         return dateComponent.second!
     }
     
     func minute() -> Int {
-        let calendar = Calendar.current
+        var calendar = Calendar.current
+        calendar.timeZone = TimeZone(identifier: "UTC")!
         let dateComponent = (calendar as NSCalendar).components(.minute, from: self)
         return dateComponent.minute!
     }
     
     func day() -> Int {
-        let calendar = Calendar.current
+        var calendar = Calendar.current
+        calendar.timeZone = TimeZone(identifier: "UTC")!
         let dateComponent = (calendar as NSCalendar).components(.day, from: self)
         return dateComponent.day!
     }
     
     func weekday() -> Int {
-        let calendar = Calendar.current
+        var calendar = Calendar.current
+        calendar.timeZone = TimeZone(identifier: "UTC")!
         let dateComponent = (calendar as NSCalendar).components(.weekday, from: self)
         return dateComponent.weekday!
     }
     
     func month() -> Int {
-        let calendar = Calendar.current
+        var calendar = Calendar.current
+        calendar.timeZone = TimeZone(identifier: "UTC")!
         let dateComponent = (calendar as NSCalendar).components(.month, from: self)
         return dateComponent.month!
     }
     
     func year() -> Int {
-        let calendar = Calendar.current
+        var calendar = Calendar.current
+        calendar.timeZone = TimeZone(identifier: "UTC")!
         let dateComponent = (calendar as NSCalendar).components(.year, from: self)
         return dateComponent.year!
     }
     
     func numberOfDaysInMonth() -> Int {
-        let calendar = Calendar.current
+        var calendar = Calendar.current
+        calendar.timeZone = TimeZone(identifier: "UTC")!
         let days = (calendar as NSCalendar).range(of: NSCalendar.Unit.day, in: NSCalendar.Unit.month, for: self)
         return days.length
     }
     
     func dateByIgnoringTime() -> Date {
-        let calendar = Calendar.current
+        var calendar = Calendar.current
+        calendar.timeZone = TimeZone(identifier: "UTC")!
         let dateComponent = (calendar as NSCalendar).components([.year, .month, .day ], from: self)
         return calendar.date(from: dateComponent)!
     }
@@ -148,7 +160,8 @@ extension Date {
     }
     
     func getWeekday() -> Int {
-        let calendar = Calendar.current
+        var calendar = Calendar.current
+        calendar.timeZone = TimeZone(identifier: "UTC")!
         return (calendar as NSCalendar).components( .weekday, from: self).weekday!
     }
     
